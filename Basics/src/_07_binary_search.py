@@ -56,9 +56,21 @@ def find_first_occurrence(arr, target):
 
 def problem_1(arr, target):
     """Search in Sorted Array - Standard binary search"""
-    low=arr[0]
+    low=0
     high=len(arr)
-    mid=
+    mid=low+high//2
+    if arr[mid]>target:
+        high=mid-1
+    elif arr[mid]<target:
+        low=mid+1
+    elif arr[mid]==target:
+        return mid
+    for i in range(low,high):
+        if arr[i]==target:
+            return i
+    return -1
+    
+        
 
 
 def problem_2(arr, target):

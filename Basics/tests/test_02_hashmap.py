@@ -11,7 +11,7 @@ def test_problem_1():
     
     assert sorted(problem_1([3, 2, 4], 6)) == [1, 2]
     assert sorted(problem_1([3, 3], 6)) == [0, 1]
-    assert sorted(problem_1([-1, -2, -3, 5, 10], 7)) == [3, 4]
+    assert sorted(problem_1([-1, -2, -3, 5, 10], 7)) == [2, 4]
 
 
 def test_problem_2():
