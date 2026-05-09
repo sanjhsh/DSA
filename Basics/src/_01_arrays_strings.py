@@ -49,24 +49,58 @@ class DynamicArray:
 
 def problem_1(nums, target):
     """Two Sum - Find two indices that sum to target"""
-    pass
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            if nums[i]+nums[j]==target:
+                return i,j
+    return None 
 
 
 def problem_2(s):
     """Valid Palindrome - Check if string is palindrome (ignore spaces/case)"""
-    pass
+    cleaned_string=""
+    for ch in s:
+        if ch.isalnum():
+            cleaned_string+=ch.lower()
+    if len(s)==0:
+        return False
+    for i in range(len(s)//2):
+            if cleaned_string[i]!=cleaned_string[len(cleaned_string)-1-i]:
+                return False
+    return True
 
 
 def problem_3(s):
     """Reverse String - Reverse array in-place"""
-    pass
-
+    array_len=len(s)
+    new_s=""
+    for i in range(array_len-1,-1,-1):
+        new_s+=s[i]
+    return new_s
 
 def problem_4(nums):
     """Remove Duplicates - Remove duplicates from sorted array in-place"""
-    pass
+    if len(nums)==0:
+        return False
+
+    k=1
+    for i in range(1,len(nums)):
+        if nums[i]!=nums[i-1]:
+            nums[k]=nums[i]
+            k+=1
+    return k
 
 
 def problem_5(nums, k):
     """Rotate Array - Rotate array right by k positions"""
-    pass
+    if len(nums)==0:
+        return False
+    # for i in range(1,k):
+    #     nums[i]=nums[i+1]
+    #     if nums[i]==len(nums)-1:
+    #         nums[i]=nums[0]
+    # return nums
+    new_left_array=nums[k:]
+    new_right_array=nums[:k]
+    new_array=new_left_array+new_right_array
+    return new_array

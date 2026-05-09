@@ -70,7 +70,11 @@ class HashMap:
 
 def problem_1(nums, target):
     """Two Sum - Find two indices whose values sum to target"""
-    pass
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            if nums[i]+nums[j]==target:
+                return [i,j]
+    return None
 
 
 def problem_2(s, t):
