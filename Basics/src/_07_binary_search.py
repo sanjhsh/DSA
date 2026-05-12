@@ -75,8 +75,34 @@ def problem_1(arr, target):
 
 def problem_2(arr, target):
     """Find First and Last Position - Find range of target occurrence"""
-    pass
+    low=0
+    high=len(arr)-1
+    mid=low+high//2
 
+    left_index=-1
+    right_index=-1
+    
+    while low<=high:
+        if arr[mid]<target:
+            high=mid-1
+        elif arr[mid]<target:
+            low=mid+1
+        else:
+            left_index=mid
+
+    low=0
+    high=len(arr)-1
+    mid=low+high//2
+
+    while low<=high:
+        if arr[mid]>target:
+            high=mid-1
+        elif arr[mid]<target:
+            low=mid+1
+        else:
+            right_index=mid
+
+    return [left_index,right_index]
 
 def problem_3(arr, target):
     """Search Insert Position - Find target or insertion point"""
